@@ -79,7 +79,6 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 <br>
 
 ### **Herramientas Utilizadas**
-🛠️🛠️🛠️🛠️🛠️🛠️🛠️🛠️🛠️
 
 * [NodeJS](https://nodejs.org/)
 * [ExpressJS](https://expressjs.com/)
@@ -150,7 +149,7 @@ Contributions are what make the open source community such an amazing place to b
 <!-- LICENSE -->
 ## Licencia 📄
 
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
+Este proyecto está bajo la Licencia **MIT** - mira el archivo [LICENSE](LICENSE) para detalles
 
 <br>
 
@@ -181,7 +180,7 @@ Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md
 [issues-shield]: https://img.shields.io/github/issues/macarthuror/mexpost?style=flat-square
 [issues-url]: https://github.com/macarthuror/mexpost/issues
 [license-shield]: https://img.shields.io/github/license/macarthuror/mexpost?style=flat-square
-[license-url]: https://github.com/macarthuror/mexpost/blob/master/LICENSE.txt
+[license-url]: https://github.com/macarthuror/mexpost/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://mx.linkedin.com/in/ortegaarturo
 [product-screenshot]: images/screenshot.png
