@@ -1,0 +1,33 @@
+
+#
+# MexPost
+# @macarthuror
+#
+
+#
+# Variables de entorno
+#
+.env
+
+#
+# Paquetes y recursos
+#
+node_modules
+
+#
+# Compilados
+#
+dist
+dist/**
+.map
+
+#
+# Debug
+#
+*.log
+npm-debug.log
+
+#
+# Documentación
+#
+apidoc
