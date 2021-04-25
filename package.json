@@ -11,8 +11,8 @@
   "repository": "https://github.com/macarthuror/MexPost/MexPost",
   "scripts": {
     "build": "tsc --build",
-    "start": "node dist/app.js",
-    "dev": "nodemon src/app.ts",
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "docs:api": "apidoc -i src/ -o apidoc/"

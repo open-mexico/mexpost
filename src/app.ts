@@ -1,23 +1,7 @@
-import app from './server'
-import config from './config'
-import consola from 'consola'
+import express, { Express } from 'express';
 
-const { PORT, MEXPOST } = config
+const app: Express = express();
 
-async function bootstrap(): Promise<void> {
-  try {
-    app.listen(PORT)
-  } catch (error) {
-    throw new Error(error)
-  }
-}
+app.get('/', (req, res) => res.send('Express + TypeScript Server'));
 
-bootstrap()
-  .then(() => {
-    console.log('\x1b[34m', MEXPOST)
-    consola.ready(`⚡️[server]: Server is running at http://localhost:${PORT}`)
-  })
-  .catch((err) => {
-    consola.error(err)
-    process.exit()
-  })
+export default app;
