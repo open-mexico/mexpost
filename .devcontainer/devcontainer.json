@@ -11,7 +11,7 @@
 
 	"extensions": [],
 
-	"forwardPorts": [9009],
+	"forwardPorts": [3991],
 
 	"portsAttributes": {
 		"3000": {
