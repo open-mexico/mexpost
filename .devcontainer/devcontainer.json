@@ -1,0 +1,26 @@
+{
+	"name": "Node.js",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": { "VARIANT": "14" }
+	},
+
+	"settings": { 
+		"terminal.integrated.defaultProfile.linux": "/bin/bash",
+	},
+
+	"extensions": [],
+
+	"forwardPorts": [9009],
+
+	"portsAttributes": {
+		"3000": {
+			"label": "Hello Remote World",
+			"onAutoForward": "notify"
+		}
+	},
+
+	"postCreateCommand": "npm install",
+
+	"remoteUser": "node"
+}
