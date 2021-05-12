@@ -1,9 +1,9 @@
-import { spawn } from 'child_process'
 import path from 'path'
-import mariadb, { Pool, PoolConnection, PoolConfig } from 'mariadb'
-import { Express } from 'express';
 import consola from 'consola'
 import { db } from './config'
+import { spawn } from 'child_process'
+import { FastifyInstance } from 'fastify'
+import mariadb, { Pool, PoolConnection, PoolConfig } from 'mariadb'
 
 const config: PoolConfig | string = {
   ...db,
@@ -13,17 +13,19 @@ const pool: Pool = mariadb.createPool(config);
 
 let conn: PoolConnection;
 
-async function DBConnection(app: Express) {
+async function DBConnection(app: FastifyInstance) {
   try {
     conn = await pool.getConnection();
     consola.success('Conexión a base de datos ✅\n');
     await createTables();
     createData();
+
   } catch (error) {
     consola.error(error);
     throw new Error('Error al conectar con base de datos');
+
   } finally {
-    app.set('db', conn);
+    app.decorate('db', conn)
   }
 }
 
