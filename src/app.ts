@@ -1,7 +1,14 @@
-import express, { Express } from 'express';
+import config from './config'
+import fastify, { FastifyInstance } from 'fastify'
 
-const app: Express = express();
+const { IS_DEV } = config
 
-app.get('/', (req, res) => res.send('Express + TypeScript Server'));
+let app: FastifyInstance = fastify({
+    logger: IS_DEV
+})
 
-export default app;
+app.get('/', async function (request, reply) {
+    return { hello: 'world' }
+})
+
+export default app

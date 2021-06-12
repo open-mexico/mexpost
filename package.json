@@ -23,11 +23,10 @@
   "dependencies": {
     "consola": "^2.15.3",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1",
+    "fastify": "^3.15.1",
     "mariadb": "^2.5.3"
   },
   "devDependencies": {
-    "@types/express": "^4.17.12",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.6.0",
     "jest": "^26.6.3",
