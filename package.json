@@ -23,7 +23,7 @@
   "dependencies": {
     "consola": "^2.15.3",
     "dotenv": "^10.0.0",
-    "fastify": "^3.20.2",
+    "fastify": "^4.8.1",
     "mariadb": "^2.5.4"
   },
   "devDependencies": {
