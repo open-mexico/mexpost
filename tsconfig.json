@@ -3,14 +3,18 @@
       "strict": true,
       "rootDir": "./src",
       "outDir": "./dist",
-      "lib": ["es2019"],
-      "target": "es6",
+      "lib": ["es2021"],
+      "target": "es2021",
       "module": "commonjs",
+      "allowJs": false,
       "sourceMap": true,
+      "declaration": true,
+      "declarationMap": true,
       "esModuleInterop": true,
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true
   },
+  "include": ["src/**/*"],
   "exclude": [
       "**/node_modules",
       "**/tests"

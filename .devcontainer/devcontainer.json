@@ -2,14 +2,14 @@
 	"name": "Node.js",
 	"build": {
 		"dockerfile": "Dockerfile",
-		"args": { "VARIANT": "14" }
+		"args": { "VARIANT": "22" }
 	},
 
-	"settings": { 
-		"terminal.integrated.defaultProfile.linux": "/bin/bash",
+	"customizations/vscode/settings": { 
+		"terminal.integrated.defaultProfile.linux": "/bin/bash"
 	},
 
-	"extensions": [],
+	"customizations/vscode/extensions": [],
 
 	"forwardPorts": [3991],
 
