@@ -65,20 +65,19 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+This open-source project aims to simplify the process of finding and accessing information about neighborhoods (colonias) in Mexico. Users can efficiently search for colonias using various methods: by postal code, by name (partial or full), or by geographic coordinates. Additionally, the tool provides the functionality to obtain the geographic coordinates of a specific colonia. This project is intended to be a valuable resource for developers, researchers, and anyone needing quick access to colonia data in Mexico.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have have contributed to expanding this template!
-
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
-
+## Descripción
+Este proyecto de código abierto tiene como objetivo facilitar la búsqueda y consulta de información sobre las colonias en México. A través de diferentes métodos de búsqueda, los usuarios podrán acceder a datos relevantes de cada colonia de forma rápida y sencilla.
 <br>
 
-### **Herramientas Utilizadas**
+## Funcionalidades principales
+* Búsqueda por código postal: Permite encontrar información detallada de una colonia específica ingresando su código postal.
+* Búsqueda por nombre de colonia: Facilita la búsqueda de colonias ingresando parte de su nombre. El programa mostrará sugerencias y resultados relevantes.
+* Búsqueda por coordenadas: Permite identificar la colonia a la que pertenecen unas coordenadas geográficas dadas.
+* Obtención de coordenadas: Permite obtener las coordenadas geográficas de una colonia específica.
+
+## **Herramientas Utilizadas**
 
 * [NodeJS](https://nodejs.org/)
 * [ExpressJS](https://expressjs.com/)
