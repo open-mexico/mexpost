@@ -8,9 +8,13 @@
 */
 
 import router from '@adonisjs/core/services/router'
+const PostalsController = () => import('#controllers/postals_controller')
 
 router.get('/', async () => {
   return {
     hello: 'world',
   }
 })
+
+router.get('/codigo/:codigo', [PostalsController, 'codigo'])
+router.get('/colonias/:colonia', [PostalsController, 'colonia'])
