@@ -11,7 +11,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/macarthuror/mexpost">
+  <a href="https://github.com/open-mexico/mexpost">
     <img src="assets\mex-post.png" alt="MEX-POST" width="296">
   </a>
 
@@ -22,11 +22,11 @@
     <br />
     <a href="https://pages.github.com/mexpost"><strong>Explora la documentación »</strong></a>
     <br />
-    <a href="https://github.com/macarthuror/mexpost">View Demo</a>
+    <a href="https://github.com/open-mexico/mexpost">View Demo</a>
     ·
-    <a href="https://github.com/macarthuror/mexpost/issues">Report Bug</a>
+    <a href="https://github.com/open-mexico/mexpost/issues">Report Bug</a>
     ·
-    <a href="https://github.com/macarthuror/mexpost/issues">Request Feature</a>
+    <a href="https://github.com/open-mexico/mexpost/issues">Request Feature</a>
   </p>
 </p>
 
@@ -104,7 +104,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/macarthuror/mexpost.git
+   git clone https://github.com/open-mexico/mexpost.git
    ```
 2. Install NPM packages
 
@@ -128,7 +128,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/macarthuror/mexpost/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/open-mexico/mexpost/issues) for a list of proposed features (and known issues).
 
 
 
@@ -170,16 +170,16 @@ Este proyecto está bajo la Licencia **MIT** - mira el archivo [LICENSE](LICENSE
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/macarthuror/mexpost?style=flat-square
-[contributors-url]: https://github.com/macarthuror/mexpost/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/macarthuror/mexpost?style=flat-square
-[forks-url]: https://github.com/macarthuror/mexpost/network/members
-[stars-shield]: https://img.shields.io/github/stars/macarthuror/mexpost?style=flat-square
-[stars-url]: https://github.com/macarthuror/mexpost/stargazers
-[issues-shield]: https://img.shields.io/github/issues/macarthuror/mexpost?style=flat-square
-[issues-url]: https://github.com/macarthuror/mexpost/issues
-[license-shield]: https://img.shields.io/github/license/macarthuror/mexpost?style=flat-square
-[license-url]: https://github.com/macarthuror/mexpost/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/open-mexico/mexpost?style=flat-square
+[contributors-url]: https://github.com/open-mexico/mexpost/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/open-mexico/mexpost?style=flat-square
+[forks-url]: https://github.com/open-mexico/mexpost/network/members
+[stars-shield]: https://img.shields.io/github/stars/open-mexico/mexpost?style=flat-square
+[stars-url]: https://github.com/open-mexico/mexpost/stargazers
+[issues-shield]: https://img.shields.io/github/issues/open-mexico/mexpost?style=flat-square
+[issues-url]: https://github.com/open-mexico/mexpost/issues
+[license-shield]: https://img.shields.io/github/license/open-mexico/mexpost?style=flat-square
+[license-url]: https://github.com/open-mexico/mexpost/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/macarthuror/
 [product-screenshot]: images/screenshot.png
