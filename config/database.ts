@@ -2,7 +2,7 @@ import env from '#start/env'
 import { defineConfig } from '@adonisjs/lucid'
 
 const dbConfig = defineConfig({
-  connection: 'postgres',
+  connection: env.get('DB_CONNECTION', 'sqlite'),
   connections: {
     postgres: {
       client: 'pg',
@@ -18,6 +18,12 @@ const dbConfig = defineConfig({
         paths: ['database/migrations'],
       },
     },
+    sqlite: {
+      client: 'better-sqlite3',
+      connection: {
+        filename: env.get('DB_FILE', 'tmp/db.sqlite'),
+      },
+    } // squlite
   },
 })
 
