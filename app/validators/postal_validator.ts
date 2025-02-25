@@ -20,3 +20,10 @@ export const codigoPostalEstadoValidator = vine.compile(
 codigoPostalEstadoValidator.messagesProvider = new SimpleMessagesProvider({
   'codigo.regex': 'El código postal debe ser un número entre 3 y 5 dígitos',
 })
+
+export const coloniaEstadoValidator = vine.compile(
+  vine.object({
+    colonia: vine.string().trim().minLength(3).maxLength(64),
+    estado: vine.number().positive().withoutDecimals().min(1).max(32),
+  })
+)
