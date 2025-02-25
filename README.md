@@ -23,13 +23,13 @@
   <p align="center">
     Consulta colonias, municipios, códigos postales y coordenadas.
     <br />
-    <a href="https://pages.github.com/mexpost"><strong>Explora la documentación »</strong></a>
+    <a href="https://open-mexico.github.io/mexpost/"><strong>Explora la documentación »</strong></a>
     <br />
-    <a href="https://github.com/open-mexico/mexpost">View Demo</a>
+    <!-- <a href="https://github.com/open-mexico/mexpost">View Demo</a>
+    · -->
+    <a href="https://github.com/open-mexico/mexpost/issues/new?template=---1-report-an-issue.md">Report Bug</a>
     ·
-    <a href="https://github.com/open-mexico/mexpost/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/open-mexico/mexpost/issues">Request Feature</a>
+    <a href="https://github.com/open-mexico/mexpost/issues/new?template=---2-share-an-idea.md">Request Feature</a>
   </p>
 </p>
 
@@ -42,6 +42,8 @@
     <li>
       <a href="#about-the-project">Sobre el Proyecto</a>
       <ul>
+        <li><a href="#descripción">Descripción</a></li>
+        <li><a href="#funcionalidades-principales">Funcionalidades principales</a></li>
         <li><a href="#herramientas-utilizadas">🛠️- Herramientas Utilizadas</a></li>
       </ul>
     </li>
@@ -82,9 +84,9 @@ Este proyecto de código abierto tiene como objetivo facilitar la búsqueda y co
 
 ## **Herramientas Utilizadas**
 
-* [NodeJS](https://nodejs.org/)
-* [ExpressJS](https://expressjs.com/)
+* [AdonisJS](https://adonisjs.com/)
 * [TypeScript](https://www.typescriptlang.org/)
+* [NodeJS](https://nodejs.org/)
 
 
 ---
