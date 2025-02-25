@@ -5,33 +5,42 @@
 https://github.com/macarthuror
 
 @project MexPost
-https://github.com/macarthuror/mexpost
+https://github.com/open-mexico/mexpost
 
-Created at: 24/04/2021
-Edited at: 24/04/2021
+Created at: 24/April/2021
+Edited at: 24/February/2025
 
 Required pacages:
 - pandas
 - sqlalchemy
 - mysqlclient
+- python-dotenv
 """
 
 import os
 import pandas as pd
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
+import sqlite3
 
 # Load environment variables
 load_dotenv()
 
+ENVIRONMENT = os.getenv('NODE_ENV')
 DB_USER = os.getenv('DB_USER')
 DB_PASSWORD = os.getenv('DB_PASSWORD')
 DB_HOST = os.getenv('DB_HOST')
 DB_PORT = os.getenv('DB_PORT')
-DB_NAME = os.getenv('DB_NAME')
+DB_DATABASE = os.getenv('DB_DATABASE')
 
 # Connection to the database
-# engine = create_engine(f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}")
+if ENVIRONMENT == 'development':
+    # SQLite connection for local development
+    conn = sqlite3.connect('tmp/db.sqlite')
+    engine = create_engine('sqlite://tmp/db.sqlite')
+else:
+    # MySQL connection for production
+    engine = create_engine(f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_DATABASE}")
 
 # Fetch and clean postal codes from Correos de México
 codigos = pd.read_csv(
@@ -42,7 +51,7 @@ codigos = pd.read_csv(
     dtype={'d_codigo': 'string'}
 )
 
-# Copy dataframes to use for states and municipalities
+  # Copy dataframes to use for states and municipalities
 codigos_estados = codigos.copy()
 codigos_municipios = codigos.copy()
 
@@ -71,9 +80,10 @@ municipios = codigos_municipios[['nombre', 'id', 'estado_id']].drop_duplicates()
 
 # Update database tables
 try:
-#     estados.to_sql('estados', con=engine, if_exists='append', index=False)
-#     municipios.to_sql('municipios', con=engine, if_exists='append', index=False)
-#     codigos.to_sql('codigos_postales', con=engine, if_exists='append', index=False)
+    estados.to_sql('estados', con=engine, if_exists='append', index=False)
+    municipios.to_sql('municipios', con=engine, if_exists='append', index=False)
+    codigos.to_sql('codigos_postales', con=engine, if_exists='append', index=False)
+    # FOR DEVELOPMENT
     estados.to_csv('estados', index=False)
     municipios.to_csv('municipios', index=False)
     codigos.to_csv('codigos_postales', index=False)
