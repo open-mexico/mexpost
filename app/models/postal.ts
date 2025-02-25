@@ -22,6 +22,11 @@ export default class Postal extends BaseModel {
   @column()
   declare zona: string
 
-  @column({ serializeAs: null})
-  declare estado_id: string
+  // @hasOne(() => Estado, {
+  //   localKey: 'estado_id',
+  // })
+  // declare estado: HasOne<typeof Estado>
+
+  // @belongsTo(() => Estado)
+  // declare estado: BelongsTo<typeof Estado>
 }
