@@ -1,18 +1,23 @@
 
 #
 # MexPost
-# @macarthuror
+# @macarthuror - github.com/macarthuror
 #
 
 #
 # Variables de entorno
 #
 .env
+.env.local
+.env.production.local
+.env.development.local
 
 #
-# Paquetes y recursos
+# Dependencies and AdonisJS build
 #
 node_modules
+build
+tmp
 
 #
 # Compilados
@@ -31,3 +36,15 @@ npm-debug.log
 # Documentación
 #
 apidoc
+cache
+
+#
+# Frontend assets compiled code
+#
+public/assets
+
+#
+# Build tools specific
+#
+npm-debug.log
+yarn-error.log

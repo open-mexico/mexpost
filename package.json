@@ -1,46 +1,88 @@
 {
-  "name": "mexpost",
+  "name": "adonis",
   "version": "0.0.1",
-  "description": "API de códigos postales",
+  "type": "module",
   "license": "MIT",
-  "main": "dist/index.js",
   "authors": {
     "name": "Arturo Ortega",
     "email": "arturo.ortegaro@gmail.com"
   },
-  "repository": "https://github.com/macarthuror/MexPost/MexPost",
-  "scripts": {
-    "build": "tsc",
-    "start": "node dist/index",
-    "dev": "nodemon",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "docs:api": "apidoc -i src/ -o apidoc/",
-    "test": "jest",
-    "test:w": "jest --watchAll",
-    "test:w:c": "jest --watchAll --verbose false"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/open-mexico/mexpost"
   },
-  "dependencies": {
-    "consola": "^2.15.3",
-    "dotenv": "^10.0.0",
-    "fastify": "^3.20.2",
-    "mariadb": "^2.5.4"
+  "engines": {
+    "node": ">=22"
+  },
+  "bugs": {
+    "url": "https://github.com/open-mexico/mexpost/issues"
+  },
+  "scripts": {
+    "start": "node bin/server.js",
+    "build": "node ace build",
+    "dev": "node ace serve --hmr",
+    "test": "node ace test",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs"
+  },
+  "imports": {
+    "#controllers/*": "./app/controllers/*.js",
+    "#exceptions/*": "./app/exceptions/*.js",
+    "#models/*": "./app/models/*.js",
+    "#mails/*": "./app/mails/*.js",
+    "#services/*": "./app/services/*.js",
+    "#listeners/*": "./app/listeners/*.js",
+    "#events/*": "./app/events/*.js",
+    "#middleware/*": "./app/middleware/*.js",
+    "#validators/*": "./app/validators/*.js",
+    "#providers/*": "./providers/*.js",
+    "#policies/*": "./app/policies/*.js",
+    "#abilities/*": "./app/abilities/*.js",
+    "#database/*": "./database/*.js",
+    "#start/*": "./start/*.js",
+    "#tests/*": "./tests/*.js",
+    "#config/*": "./config/*.js",
+    "#utils/*": "./utils/*.js"
   },
   "devDependencies": {
-    "@types/jest": "^27.0.1",
-    "@types/node": "^16.7.2",
-    "jest": "^26.6.3",
-    "nodemon": "^2.0.12",
-    "ts-jest": "^26.5.6",
-    "ts-node": "^10.0.0",
-    "typescript": "^4.3.2",
-    "vuepress": "^1.8.2"
+    "@adonisjs/assembler": "^7.8.2",
+    "@adonisjs/eslint-config": "^2.0.0",
+    "@adonisjs/prettier-config": "^1.4.0",
+    "@adonisjs/tsconfig": "^1.4.0",
+    "@japa/api-client": "^3.0.3",
+    "@japa/assert": "^4.0.1",
+    "@japa/plugin-adonisjs": "^4.0.0",
+    "@japa/runner": "^4.2.0",
+    "@swc/core": "1.10.7",
+    "@types/luxon": "^3.4.2",
+    "@types/node": "^22.13.2",
+    "eslint": "^9.20.1",
+    "hot-hook": "^0.4.0",
+    "pino-pretty": "^13.0.0",
+    "prettier": "^3.5.0",
+    "ts-node-maintained": "^10.9.5",
+    "typescript": "~5.7",
+    "vitepress": "^1.6.3"
   },
-  "nodemonConfig": {
-    "watch": [
-      "src"
-    ],
-    "ext": "ts",
-    "exec": "ts-node src/index.ts"
-  }
+  "dependencies": {
+    "@adonisjs/auth": "^9.3.1",
+    "@adonisjs/core": "^6.17.2",
+    "@adonisjs/cors": "^2.2.1",
+    "@adonisjs/lucid": "^21.6.0",
+    "@vinejs/vine": "^3.0.0",
+    "better-sqlite3": "^11.8.1",
+    "luxon": "^3.5.0",
+    "pg": "^8.13.3",
+    "reflect-metadata": "^0.2.2"
+  },
+  "hotHook": {
+    "boundaries": [
+      "./app/controllers/**/*.ts",
+      "./app/middleware/*.ts"
+    ]
+  },
+  "prettier": "@adonisjs/prettier-config"
 }

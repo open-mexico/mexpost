@@ -7,11 +7,14 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
+> [!IMPORTANT]
+> Under Development | Versión en desarrollo.
+
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/macarthuror/mexpost">
+  <a href="https://github.com/open-mexico/mexpost">
     <img src="assets\mex-post.png" alt="MEX-POST" width="296">
   </a>
 
@@ -22,11 +25,11 @@
     <br />
     <a href="https://pages.github.com/mexpost"><strong>Explora la documentación »</strong></a>
     <br />
-    <a href="https://github.com/macarthuror/mexpost">View Demo</a>
+    <a href="https://github.com/open-mexico/mexpost">View Demo</a>
     ·
-    <a href="https://github.com/macarthuror/mexpost/issues">Report Bug</a>
+    <a href="https://github.com/open-mexico/mexpost/issues">Report Bug</a>
     ·
-    <a href="https://github.com/macarthuror/mexpost/issues">Request Feature</a>
+    <a href="https://github.com/open-mexico/mexpost/issues">Request Feature</a>
   </p>
 </p>
 
@@ -65,20 +68,19 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+This open-source project aims to simplify the process of finding and accessing information about neighborhoods (colonias) in Mexico. Users can efficiently search for colonias using various methods: by postal code, by name (partial or full), or by geographic coordinates. Additionally, the tool provides the functionality to obtain the geographic coordinates of a specific colonia. This project is intended to be a valuable resource for developers, researchers, and anyone needing quick access to colonia data in Mexico.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have have contributed to expanding this template!
-
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
-
+## Descripción
+Este proyecto de código abierto tiene como objetivo facilitar la búsqueda y consulta de información sobre las colonias en México. A través de diferentes métodos de búsqueda, los usuarios podrán acceder a datos relevantes de cada colonia de forma rápida y sencilla.
 <br>
 
-### **Herramientas Utilizadas**
+## Funcionalidades principales
+* Búsqueda por código postal: Permite encontrar información detallada de una colonia específica ingresando su código postal.
+* Búsqueda por nombre de colonia: Facilita la búsqueda de colonias ingresando parte de su nombre. El programa mostrará sugerencias y resultados relevantes.
+* Búsqueda por coordenadas: Permite identificar la colonia a la que pertenecen unas coordenadas geográficas dadas.
+* Obtención de coordenadas: Permite obtener las coordenadas geográficas de una colonia específica.
+
+## **Herramientas Utilizadas**
 
 * [NodeJS](https://nodejs.org/)
 * [ExpressJS](https://expressjs.com/)
@@ -105,7 +107,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/macarthuror/mexpost.git
+   git clone https://github.com/open-mexico/mexpost.git
    ```
 2. Install NPM packages
 
@@ -129,7 +131,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/macarthuror/mexpost/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/open-mexico/mexpost/issues) for a list of proposed features (and known issues).
 
 
 
@@ -171,16 +173,16 @@ Este proyecto está bajo la Licencia **MIT** - mira el archivo [LICENSE](LICENSE
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/macarthuror/mexpost?style=flat-square
-[contributors-url]: https://github.com/macarthuror/mexpost/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/macarthuror/mexpost?style=flat-square
-[forks-url]: https://github.com/macarthuror/mexpost/network/members
-[stars-shield]: https://img.shields.io/github/stars/macarthuror/mexpost?style=flat-square
-[stars-url]: https://github.com/macarthuror/mexpost/stargazers
-[issues-shield]: https://img.shields.io/github/issues/macarthuror/mexpost?style=flat-square
-[issues-url]: https://github.com/macarthuror/mexpost/issues
-[license-shield]: https://img.shields.io/github/license/macarthuror/mexpost?style=flat-square
-[license-url]: https://github.com/macarthuror/mexpost/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/open-mexico/mexpost?style=flat-square
+[contributors-url]: https://github.com/open-mexico/mexpost/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/open-mexico/mexpost?style=flat-square
+[forks-url]: https://github.com/open-mexico/mexpost/network/members
+[stars-shield]: https://img.shields.io/github/stars/open-mexico/mexpost?style=flat-square
+[stars-url]: https://github.com/open-mexico/mexpost/stargazers
+[issues-shield]: https://img.shields.io/github/issues/open-mexico/mexpost?style=flat-square
+[issues-url]: https://github.com/open-mexico/mexpost/issues
+[license-shield]: https://img.shields.io/github/license/open-mexico/mexpost?style=flat-square
+[license-url]: https://github.com/open-mexico/mexpost/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://mx.linkedin.com/in/ortegaarturo
+[linkedin-url]: https://www.linkedin.com/in/macarthuror/
 [product-screenshot]: images/screenshot.png

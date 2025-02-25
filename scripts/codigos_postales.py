@@ -5,55 +5,89 @@
 https://github.com/macarthuror
 
 @project MexPost
-https://github.com/macarthuror/mexpost
+https://github.com/open-mexico/mexpost
 
-Created at: 24/04/2021
-Edited at: 24/04/2021
+Created at: 24/April/2021
+Edited at: 24/February/2025
 
 Required pacages:
 - pandas
 - sqlalchemy
 - mysqlclient
+- python-dotenv
 """
 
+import os
 import pandas as pd
 from sqlalchemy import create_engine
+from dotenv import load_dotenv
+import sqlite3
 
-# Conexión a la base de datos
-# TODO: get data from .env file
-engine = create_engine("mysql+mysqldb://root:@localhost:3306/mexpost")
+# Load environment variables
+load_dotenv()
 
-# Obtener y limpiar códigos postales desde Correos de México
-codigos = pd.read_csv('https://www.correosdemexico.gob.mx/datosabiertos/cp/cpdescarga.txt', sep="|", encoding = "ISO-8859-1", skiprows=[0], dtype={ 'd_codigo': 'string'})
+ENVIRONMENT = os.getenv('NODE_ENV')
+DB_USER = os.getenv('DB_USER')
+DB_PASSWORD = os.getenv('DB_PASSWORD')
+DB_HOST = os.getenv('DB_HOST')
+DB_PORT = os.getenv('DB_PORT')
+DB_DATABASE = os.getenv('DB_DATABASE')
 
-# Se copian frames para usar con los estados y los municipios
+# Connection to the database
+if ENVIRONMENT == 'development':
+    # SQLite connection for local development
+    conn = sqlite3.connect('tmp/db.sqlite')
+    engine = create_engine('sqlite://tmp/db.sqlite')
+else:
+    # MySQL connection for production
+    engine = create_engine(f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_DATABASE}")
+
+# Fetch and clean postal codes from Correos de México
+codigos = pd.read_csv(
+    'https://www.correosdemexico.gob.mx/datosabiertos/cp/cpdescarga.txt',
+    sep="|",
+    encoding="ISO-8859-1",
+    skiprows=[0],
+    dtype={'d_codigo': 'string'}
+)
+
+  # Copy dataframes to use for states and municipalities
 codigos_estados = codigos.copy()
 codigos_municipios = codigos.copy()
 
-# Códigos postales
-# Remueve columnas que no se ocuparan
-codigos = codigos.drop(['d_CP', 'c_CP','c_oficina', 'c_tipo_asenta', 'id_asenta_cpcons', 'c_cve_ciudad', 'd_estado', 'D_mnpio'], axis=1)
-# Renombra las columnas con los nombres usados en la base de datos
-codigos.rename(columns={'index': '', 'd_codigo': 'codigo', 'd_asenta': 'nombre', 'd_tipo_asenta': 'tipo', 'd_ciudad': 'ciudad', 'd_zona': 'zona', 'c_estado': 'estado_id', 'c_mnpio': 'municipio_id'}, inplace=True)
+# Postal Codes
+# Drop unnecessary columns
+codigos.drop(columns=['d_CP', 'c_CP', 'c_oficina', 'c_tipo_asenta', 'id_asenta_cpcons', 'c_cve_ciudad', 'd_estado', 'D_mnpio'], inplace=True)
 
-# Estados
-codigos_estados.rename(columns={'c_estado': 'id', 'd_estado': 'nombre'},inplace=True)
-## Agrupa los estados con su respectivo id y nombre
-estados = codigos_estados[['nombre', 'id']].sort_values(by='id').groupby(['id', 'nombre']).apply(list).to_frame()
-estados.drop(estados.columns[len(estados.columns)-1], axis=1, inplace=True)
+# Rename columns to match database schema
+codigos.rename(columns={
+    'd_codigo': 'codigo',
+    'd_asenta': 'nombre',
+    'd_tipo_asenta': 'tipo',
+    'd_ciudad': 'ciudad',
+    'd_zona': 'zona',
+    'c_estado': 'estado_id',
+    'c_mnpio': 'municipio_id'
+}, inplace=True)
 
-# Municipios
-codigos_municipios.rename(columns={'c_mnpio': 'id', 'D_mnpio': 'nombre', 'c_estado': 'estado_id'},inplace=True)
-## Agrupa los Municipios con su respectivo id ,nombre y el estado al que pertenece
-municipios = codigos_municipios[['nombre', 'id', 'estado_id']].sort_values(by='id').groupby(['id', 'nombre', 'estado_id'], ).apply(list).to_frame()
-municipios.drop(municipios.columns[len(municipios.columns)-1], axis=1, inplace=True)
+# States
+codigos_estados.rename(columns={'c_estado': 'id', 'd_estado': 'nombre'}, inplace=True)
+estados = codigos_estados[['nombre', 'id']].drop_duplicates().sort_values(by='id')
 
-# Actualiza los datos en la base creada.
+# Municipalities
+codigos_municipios.rename(columns={'c_mnpio': 'id', 'D_mnpio': 'nombre', 'c_estado': 'estado_id'}, inplace=True)
+municipios = codigos_municipios[['nombre', 'id', 'estado_id']].drop_duplicates().sort_values(by='id')
+
+# Update database tables
 try:
-        estados.to_sql('estados', con=engine, if_exists='append')
-        municipios.to_sql('municipios', con=engine, if_exists='append')
-        codigos.to_sql('codigos_postales', con=engine, if_exists='append', index=False)
+    estados.to_sql('estados', con=engine, if_exists='append', index=False)
+    municipios.to_sql('municipios', con=engine, if_exists='append', index=False)
+    codigos.to_sql('codigos_postales', con=engine, if_exists='append', index=False)
+    # FOR DEVELOPMENT
+    estados.to_csv('estados', index=False)
+    municipios.to_csv('municipios', index=False)
+    codigos.to_csv('codigos_postales', index=False)
 
-        print('CODIGOS_IMPORTADOS: Los estados, municipios y códigos se importaron correctamente.')
+    print('CODIGOS_IMPORTADOS: Los estados, municipios y códigos se importaron correctamente.')
 except Exception as e:
-        print(e)
+    print(f"Error: {e}")
