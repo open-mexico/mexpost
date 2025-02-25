@@ -1,8 +1,11 @@
 import type { HttpContext } from '@adonisjs/core/http'
 import Postal from '#models/postal'
 import {
-  codigoPostalValidator
+  codigoPostalValidator,
+  codigoPostalEstadoValidator
 } from '#validators/postal'
+
+import { getEstadoName } from '#utils/estados'
 
 export default class PostalsController {
   async codigo({ params, response }: HttpContext) {
@@ -12,6 +15,21 @@ export default class PostalsController {
 
     const payload = {
       values: data.length,
+      data
+    }
+
+    response.json(payload)
+  }
+
+  async codigoEstado({ params, response }: HttpContext) {
+    const { codigo, estado } = await codigoPostalEstadoValidator.validate(params)
+
+    const estadoName = getEstadoName(estado)
+    const data = await Postal.query().whereLike('codigo', `%${codigo}%`).where('estado_id', estado)
+
+    const payload = {
+      values: data.length,
+      estado: estadoName.nombre,
       data
     }
 

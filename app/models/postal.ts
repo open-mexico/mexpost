@@ -21,4 +21,7 @@ export default class Postal extends BaseModel {
 
   @column()
   declare zona: string
+
+  @column({ serializeAs: null})
+  declare estado_id: string
 }

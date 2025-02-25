@@ -17,4 +17,5 @@ router.get('/', async () => {
 })
 
 router.get('/codigo/:codigo', [PostalsController, 'codigo'])
+router.get('/codigo/:codigo/estado/:estado', [PostalsController, 'codigoEstado'])
 router.get('/colonias/:colonia', [PostalsController, 'colonia'])
