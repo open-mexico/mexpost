@@ -5,10 +5,16 @@ export default class extends BaseSchema {
 
   async up() {
     this.schema.createTable(this.tableName, (table) => {
-      table.increments('id')
+      table.charset('utf8mb4')
+      table.collate('utf8mb4_unicode_ci')
 
-      table.timestamp('created_at')
-      table.timestamp('updated_at')
+      table.integer('id').unsigned()
+
+      table.string('nombre').notNullable()
+
+      table.integer('estado_id').unsigned().references('id').inTable('estados')
+
+      table.index(['id', 'estado_id'], 'municipios_id_estado_id_index')
     })
   }
 

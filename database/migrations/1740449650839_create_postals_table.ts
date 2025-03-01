@@ -5,21 +5,25 @@ export default class extends BaseSchema {
 
   async up() {
     this.schema.createTable(this.tableName, (table) => {
+      table.charset('utf8mb4')
+      table.collate('utf8mb4_unicode_ci')
+
       table.increments('id')
 
       table.string('codigo', 5).notNullable()
       table.string('nombre').notNullable()
-      table.string('tipo').notNullable()
-      table.string('ciudad').notNullable()
-      table.string('zona').notNullable()
+      table.string('tipo').nullable()
+      table.string('ciudad').nullable()
+      table.string('zona').nullable()
 
-      table.integer('estado_id').unsigned().references('id').inTable('estados')
+      table.integer('estado_id').unsigned().references('id').inTable('estados').notNullable()
+      table.integer('municipio_id').unsigned().references('id').inTable('municipios').notNullable()
 
       /**
        * Add table indexes
        */
-      // table.index(['codigo', 'estado_id'], 'user_name_index')
-      // table.index(['nombre', 'estado_id'], 'user_name_index')
+      table.index(['codigo', 'estado_id'], 'codigo_estado_index')
+      table.index(['nombre', 'estado_id'], 'nombre_codigo_estado_index')
     })
   }
 

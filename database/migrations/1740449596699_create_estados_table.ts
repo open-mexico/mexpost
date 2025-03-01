@@ -5,10 +5,11 @@ export default class extends BaseSchema {
 
   async up() {
     this.schema.createTable(this.tableName, (table) => {
-      table.increments('id')
-      table.string('nombre').notNullable().index()
+      table.charset('utf8mb4')
+      table.collate('utf8mb4_unicode_ci')
 
-      table.integer('estado_id').unsigned().references('id').inTable('estados')
+      table.increments('id').unique().primary()
+      table.string('nombre').notNullable().index()
     })
   }
 

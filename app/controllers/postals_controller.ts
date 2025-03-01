@@ -13,7 +13,7 @@ export default class PostalsController {
   async codigo({ params, response }: HttpContext) {
     const { codigo } = await codigoPostalValidator.validate(params)
 
-    const data = await Postal.query().whereLike('codigo', `%${codigo}%`)
+    const data = await Postal.query().whereRaw(`codigo like '%${codigo}%'`).preload('estado')
 
     const payload = {
       values: data.length,

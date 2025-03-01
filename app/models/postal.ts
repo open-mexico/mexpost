@@ -1,5 +1,7 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@adonisjs/lucid/orm'
+import Estado from '#models/estado'
+import { BaseModel, column, belongsTo } from '@adonisjs/lucid/orm'
+import type { BelongsTo } from '@adonisjs/lucid/types/relations'
 
 export default class Postal extends BaseModel {
   static table = 'codigos_postales'
@@ -22,11 +24,14 @@ export default class Postal extends BaseModel {
   @column()
   declare zona: string
 
+  @column({ serializeAs: null })
+  declare estadoId: number
+
   // @hasOne(() => Estado, {
   //   localKey: 'estado_id',
   // })
   // declare estado: HasOne<typeof Estado>
 
-  // @belongsTo(() => Estado)
-  // declare estado: BelongsTo<typeof Estado>
+  @belongsTo(() => Estado)
+  declare estado: BelongsTo<typeof Estado>
 }
