@@ -33,4 +33,7 @@ export default class Postal extends BaseModel {
 
   @belongsTo(() => Estado)
   declare estado: BelongsTo<typeof Estado>
+
+  @belongsTo(() => Municipio)
+  declare municipio: BelongsTo<typeof Municipio>
 }

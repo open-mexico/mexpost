@@ -10,7 +10,6 @@ import Postal from '#models/postal'
 import { getEstadoName } from '#utils/estados'
 
 export default class PostalsController {
-  // TODO: Agregar parametro para obtener el municipio de cada uno de los codigos postales
   /**
    * Retrieves postal data based on the provided codigo.
    * @param {HttpContext} ctx - The HTTP context object.
@@ -38,7 +37,7 @@ export default class PostalsController {
 
     const { wc } = request.qs()
     const busqueda = wc ? `'%${codigo}%'` : `'${codigo}%'`
-    const data = await Postal.query().whereRaw(`codigo like ${busqueda}`).where('estado_id', estado).preload('estado')
+    const data = await Postal.query().whereRaw(`codigo like ${busqueda}`).where('estado_id', estado).preload('estado').preload('municipio', q => q.where('estado_id', estado))
 
     const payload = {
       values: data.length,
@@ -56,7 +55,7 @@ export default class PostalsController {
     const page = request.input('page', 1)
     const limit = 15
 
-    const data = await Postal.query().whereRaw(`nombre like '%${newColonia}%'`).where('estado_id', estado).paginate(page, limit)
+    const data = await Postal.query().whereRaw(`nombre like '%${newColonia}%'`).where('estado_id', estado).preload('municipio', q => q.where('estado_id', estado)).paginate(page, limit)
 
     response.json(data)
   }
