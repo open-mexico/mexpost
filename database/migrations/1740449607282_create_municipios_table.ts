@@ -10,7 +10,7 @@ export default class extends BaseSchema {
 
       table.integer('id').unsigned()
 
-      table.string('nombre').notNullable()
+      table.string('nombre').notNullable().index()
 
       table.integer('estado_id').unsigned().references('id').inTable('estados')
 

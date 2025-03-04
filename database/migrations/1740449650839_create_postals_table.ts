@@ -10,8 +10,8 @@ export default class extends BaseSchema {
 
       table.increments('id')
 
-      table.string('codigo', 5).notNullable()
-      table.string('nombre').notNullable()
+      table.string('codigo', 5).notNullable().index()
+      table.string('nombre').notNullable().index()
       table.string('tipo').nullable()
       table.string('ciudad').nullable()
       table.string('zona').nullable()
