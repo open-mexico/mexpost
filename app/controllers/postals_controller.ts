@@ -1,17 +1,26 @@
 import type { HttpContext } from '@adonisjs/core/http'
 import Postal from '#models/postal'
-import {
+
+ import {
   codigoPostalValidator,
-  codigoPostalEstadoValidator
-} from '#validators/postal'
+  codigoPostalEstadoValidator,
+  coloniaEstadoValidator
+} from '#validators/postal_validator'
 
 import { getEstadoName } from '#utils/estados'
 
 export default class PostalsController {
-  async codigo({ params, response }: HttpContext) {
+  /**
+   * Retrieves postal data based on the provided codigo.
+   * @param {HttpContext} ctx - The HTTP context object.
+   * @returns {Promise<void>} - A promise that resolves when the response is sent.
+   */
+  async codigo({ params, request, response }: HttpContext) {
     const { codigo } = await codigoPostalValidator.validate(params)
 
-    const data = await Postal.query().whereLike('codigo', `%${codigo}%`)
+    const { wc } = request.qs()
+    const busqueda = wc ? `'%${codigo}%'` : `'${codigo}%'`
+    const data = await Postal.query().whereRaw(`codigo like ${busqueda}`).preload('estado')
 
     const payload = {
       values: data.length,
@@ -21,11 +30,14 @@ export default class PostalsController {
     response.json(payload)
   }
 
-  async codigoEstado({ params, response }: HttpContext) {
+  async codigoEstado({ request, params, response }: HttpContext) {
     const { codigo, estado } = await codigoPostalEstadoValidator.validate(params)
 
     const estadoName = getEstadoName(estado)
-    const data = await Postal.query().whereLike('codigo', `%${codigo}%`).where('estado_id', estado)
+
+    const { wc } = request.qs()
+    const busqueda = wc ? `'%${codigo}%'` : `'${codigo}%'`
+    const data = await Postal.query().whereRaw(`codigo like ${busqueda}`).where('estado_id', estado).preload('estado').preload('municipio', q => q.where('estado_id', estado))
 
     const payload = {
       values: data.length,
@@ -36,9 +48,15 @@ export default class PostalsController {
     response.json(payload)
   }
 
-  async colonia({ request, response }: HttpContext) {
-    const postal = await Postal.find(1)
+  async colonia({ params, request, response }: HttpContext) {
+    const { colonia, estado } = await coloniaEstadoValidator.validate(params)
 
-    response.json(postal)
+    const newColonia = decodeURIComponent(colonia)
+    const page = request.input('page', 1)
+    const limit = 15
+
+    const data = await Postal.query().whereRaw(`nombre like '%${newColonia}%'`).where('estado_id', estado).preload('municipio', q => q.where('estado_id', estado)).paginate(page, limit)
+
+    response.json(data)
   }
 }

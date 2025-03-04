@@ -11,11 +11,20 @@ import router from '@adonisjs/core/services/router'
 const PostalsController = () => import('#controllers/postals_controller')
 
 router.get('/', async () => {
-  return {
-    hello: 'world',
-  }
+  return `To know more about the API, please visit the documentation at https://open-mexico.github.io/mexpost/`
 })
 
+/**
+ * CODIGOS Y COLONIAS
+ * Retrieves postal data based on the provided codigo.
+ */
 router.get('/codigo/:codigo', [PostalsController, 'codigo'])
-router.get('/codigo/:codigo/estado/:estado', [PostalsController, 'codigoEstado'])
-router.get('/colonias/:colonia', [PostalsController, 'colonia'])
+
+router.get('/estado/:estado/codigo/:codigo', [PostalsController, 'codigoEstado'])
+
+router.get('/estado/:estado/colonias/:colonia', [PostalsController, 'colonia'])
+
+/**
+ * Municipios
+ */
+

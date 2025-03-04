@@ -1,6 +1,6 @@
 {
-  "name": "adonis",
-  "version": "0.0.1",
+  "name": "mexpost",
+  "version": "1.0.0-beta",
   "type": "module",
   "license": "MIT",
   "authors": {
@@ -73,10 +73,11 @@
     "@adonisjs/cors": "^2.2.1",
     "@adonisjs/lucid": "^21.6.0",
     "@vinejs/vine": "^3.0.0",
-    "better-sqlite3": "^11.8.1",
+    "adonis-autoswagger": "^3.66.0",
     "luxon": "^3.5.0",
-    "pg": "^8.13.3",
-    "reflect-metadata": "^0.2.2"
+    "mysql2": "^3.12.0",
+    "reflect-metadata": "^0.2.2",
+    "vitepress-openapi": "0.0.3-alpha.63"
   },
   "hotHook": {
     "boundaries": [
