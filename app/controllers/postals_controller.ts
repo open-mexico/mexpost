@@ -1,7 +1,7 @@
 import type { HttpContext } from '@adonisjs/core/http'
 import Postal from '#models/postal'
 
- import {
+import {
   codigoPostalValidator,
   codigoPostalEstadoValidator,
   coloniaEstadoValidator

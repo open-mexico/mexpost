@@ -9,6 +9,7 @@
 
 import router from '@adonisjs/core/services/router'
 const PostalsController = () => import('#controllers/postals_controller')
+const MunicipiosController = () => import('#controllers/municipios_controller')
 
 router.get('/', async () => {
   return `To know more about the API, please visit the documentation at https://open-mexico.github.io/mexpost/`
@@ -27,4 +28,4 @@ router.get('/estado/:estado/colonias/:colonia', [PostalsController, 'colonia'])
 /**
  * Municipios
  */
-
+router.get('/estado/:estado/municipio/:municipio', [MunicipiosController, 'municipio'])
