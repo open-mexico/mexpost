@@ -24,8 +24,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       adonis-autoswagger:
-        specifier: ^3.66.0
-        version: 3.66.0
+        specifier: ^3.68.0
+        version: 3.68.0
       luxon:
         specifier: ^3.5.0
         version: 3.5.0
@@ -1318,8 +1318,8 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  adonis-autoswagger@3.66.0:
-    resolution: {integrity: sha512-93PYsyYoSNp0vUfzFb+ZGnV0LgO5ud3N5g+kX2R5Idm94dd8KNN4nEVuZHtxLVIjOnK1BBlFJ7PeCsuQQmVh3g==}
+  adonis-autoswagger@3.68.0:
+    resolution: {integrity: sha512-wjfR7pjA8YT3w9HfsepJHrMqRODmV4CKBhKXBDL2MeFoLJWMdQ1RZOepMsnAUA4M3KlfA+fPp1ssqpE9tn0S8A==}
 
   ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
@@ -4770,7 +4770,7 @@ snapshots:
 
   acorn@8.14.1: {}
 
-  adonis-autoswagger@3.66.0:
+  adonis-autoswagger@3.68.0:
     dependencies:
       '@vinejs/vine': 2.1.0
       abstract-syntax-tree: 2.22.0
