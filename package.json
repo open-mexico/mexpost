@@ -77,7 +77,7 @@
     "luxon": "^3.5.0",
     "mysql2": "^3.13.0",
     "reflect-metadata": "^0.2.2",
-    "vitepress-openapi": "0.0.3-alpha.63"
+    "vitepress-openapi": "0.0.3-alpha.64"
   },
   "hotHook": {
     "boundaries": [
