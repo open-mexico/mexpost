@@ -4,16 +4,16 @@ layout: home
 
 hero:
   name: "Mexpost"
-  text: "Consulta colonias, municipios, códigos postales y coordenadas."
-  tagline: My great project tagline
+  text: "Códigos postales"
+  tagline: "Encuentra colonias en México: Código postal, nombre, coordenadas, ¡todo en una busqueda!"
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Getting Started
+      link: /getting-started
     - theme: alt
-      text: API Examples
-      link: /api-examples
-
+      text: ¿Qué es Mexpost?
+      link: /what-is-mexpost
+      
 features:
   - title: Feature A
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
