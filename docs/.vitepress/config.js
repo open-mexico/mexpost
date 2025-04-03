@@ -44,5 +44,8 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/open-mexico/mexpost' }
     ]
+  },
+  sitemap: {
+    hostname: 'https://open-mexico.github.io/mexpost/'
   }
 })
