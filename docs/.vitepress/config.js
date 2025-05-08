@@ -19,7 +19,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Busquedas', link: '/codigos-postales' }
     ],
 
     sidebar: [
@@ -34,9 +34,9 @@ export default defineConfig({
         text: 'Busquedas',
         items: [
           { text: 'Códigos Postales 📮', link: '/codigos-postales' },
-          { text: 'Colonias', link: '/colonias' },
-          { text: 'Municipio', link: '/municipios' },
-          { text: 'Por coordenadas', link: '/coordenadas' }
+          { text: 'Colonias 🏘️', link: '/colonias' },
+          { text: 'Municipios 🏛️', link: '/municipios' },
+          { text: 'Por coordenadas (🚧 Dev)', link: '/coordenadas' }
         ]
       },
       {

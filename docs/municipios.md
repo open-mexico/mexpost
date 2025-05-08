@@ -1,21 +1,20 @@
-# Colonia
+# Municipios 🏛️
 
-## Por nombre
+## 🔍 Por nombre
 
-Se buscarán todos los minicipios que coincidan con el texto a buscar
+Se buscarán todos los municipios que coincidan con el texto proporcionado.
 
-### Estructura
-
-**localhost:3333/estado/{estado_id}/municipio/{municipio}**
-
-[ID de los estados](/estados)
-
-```
-estado_id : Debe ser un número de entre 1 y 32 dígitos
-municipio : Mínimo 3 caracteres
+```BASH
+GET /estado/{estado_id}/municipio/{municipio}
 ```
 
-### Ejemplo
+[ID's de los Estados ](/estados)
+
+**estado_id :** Debe ser un número de entre **1 y 32**
+<br>
+**municipio :** Mínimo **3** caracteres
+
+## 📝 Ejemplo
 `http://localhost:3333/estado/9/municipio/tla`
 
 ```json

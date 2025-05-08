@@ -19,7 +19,7 @@ features:
     details: Los datos son sacadodos de los datos publicos de correos de México.
   - title: API Sencilla
     details: Uso intuitivo de la API para la busqueda de Colonias, Municipios y Códigos Postales.
-  - title: Busqueda por Coordenadas (Dev)
+  - title: Busqueda por Coordenadas (🚧 Dev)
     details: Busca la colonia desde las coordenadas o encuentra las coordenadas desde el código postal. (En Desarrollo)
 ---
 

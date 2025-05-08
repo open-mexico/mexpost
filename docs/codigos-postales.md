@@ -2,8 +2,6 @@
 
 ## Búsqueda por Código (Parcial o Completo) 🔍
 
-### Estructura
-
 ```BASH
 GET /codigo/{codigo_postal}
 ```
@@ -22,7 +20,7 @@ Ejemplo:
 `http://localhost:3333/codigo/2034?wc=true`
 :::
 
-### Ejemplo
+### 📝 Ejemplo
 `http://localhost:3333/codigo/0901`
 
 ```json
@@ -69,7 +67,7 @@ Ejemplo:
 http://localhost:3333/estado/9/codigo/146?wc=true
 :::
 
-### Ejemplo
+### 📝 Ejemplo
 `http://localhost:3333/estado/9/codigo/091`
 
 ```json
