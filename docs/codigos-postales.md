@@ -64,7 +64,7 @@ Si no se utiliza, la búsqueda se realizará solo al final: codigo_postal%.
 Esto se debe a consideraciones de rendimiento.
 
 Ejemplo:
-http://localhost:3333/estado/9/codigo/146?wc=true
+`http://localhost:3333/estado/9/codigo/146?wc=true`
 :::
 
 ### 📝 Ejemplo
