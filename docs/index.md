@@ -15,11 +15,11 @@ hero:
       link: /what-is-mexpost
       
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Datos Actualizados
+    details: Los datos son sacadodos de los datos publicos de correos de México.
+  - title: API Sencilla
+    details: Uso intuitivo de la API para la busqueda de Colonias, Municipios y Códigos Postales.
+  - title: Busqueda por Coordenadas (Dev)
+    details: Busca la colonia desde las coordenadas o encuentra las coordenadas desde el código postal. (En Desarrollo)
 ---
 

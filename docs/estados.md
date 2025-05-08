@@ -1,36 +1,47 @@
-# ID de estados
+# ID's de los Estados
 
-```
-{ nombre: 'Aguascalientes', id: 1},
-{ nombre: 'Baja California', id: 2},
-{ nombre: 'Baja California Sur', id: 3},
-{ nombre: 'Campeche', id: 4},
-{ nombre: 'Coahuila de Zaragoza', id: 5},
-{ nombre: 'Colima', id: 6},
-{ nombre: 'Chiapas', id: 7},
-{ nombre: 'Chihuahua', id: 8},
-{ nombre: 'Ciudad de México', id: 9},
-{ nombre: 'Durango', id: 10},
-{ nombre: 'Guanajuato', id: 11},
-{ nombre: 'Guerrero', id: 12},
-{ nombre: 'Hidalgo', id: 13},
-{ nombre: 'Jalisco', id: 14},
-{ nombre: 'México', id: 15},
-{ nombre: 'Michoacán de Ocampo', id: 16},
-{ nombre: 'Morelos', id: 17},
-{ nombre: 'Nayarit', id: 18},
-{ nombre: 'Nuevo León', id: 19},
-{ nombre: 'Oaxaca', id: 20},
-{ nombre: 'Puebla', id: 21},
-{ nombre: 'Querétaro', id: 22},
-{ nombre: 'Quintana Roo', id: 23},
-{ nombre: 'San Luis Potosí', id: 24},
-{ nombre: 'Sinaloa', id: 25},
-{ nombre: 'Sonora', id: 26},
-{ nombre: 'Tabasco', id: 27},
-{ nombre: 'Tamaulipas', id: 28},
-{ nombre: 'Tlaxcala', id: 29},
-{ nombre: 'Veracruz de Ignacio de la Llave', id: 30},
-{ nombre: 'Yucatán', id: 31},
-{ nombre: 'Zacatecas', id: 32}
-```
+Esta sección proporciona los datos de los estados que conforman la República Mexicana. Cada estado está representado por su nombre y un identificador único.
+
+## Estructura de los Datos
+
+Cada entrada de estado incluye:
+
+* **Nombre:** El nombre oficial del estado.
+* **ID:** Un identificador único numérico para el estado.
+
+## Listado de Estados
+
+A continuación se presenta el listado completo de los estados disponibles:
+
+* **Aguascalientes** (ID: 1)
+* **Baja California** (ID: 2)
+* **Baja California Sur** (ID: 3)
+* **Campeche** (ID: 4)
+* **Coahuila de Zaragoza** (ID: 5)
+* **Colima** (ID: 6)
+* **Chiapas** (ID: 7)
+* **Chihuahua** (ID: 8)
+* **Ciudad de México** (ID: 9)
+* **Durango** (ID: 10)
+* **Guanajuato** (ID: 11)
+* **Guerrero** (ID: 12)
+* **Hidalgo** (ID: 13)
+* **Jalisco** (ID: 14)
+* **México** (ID: 15)
+* **Michoacán de Ocampo** (ID: 16)
+* **Morelos** (ID: 17)
+* **Nayarit** (ID: 18)
+* **Nuevo León** (ID: 19)
+* **Oaxaca** (ID: 20)
+* **Puebla** (ID: 21)
+* **Querétaro** (ID: 22)
+* **Quintana Roo** (ID: 23)
+* **San Luis Potosí** (ID: 24)
+* **Sinaloa** (ID: 25)
+* **Sonora** (ID: 26)
+* **Tabasco** (ID: 27)
+* **Tamaulipas** (ID: 28)
+* **Tlaxcala** (ID: 29)
+* **Veracruz de Ignacio de la Llave** (ID: 30)
+* **Yucatán** (ID: 31)
+* **Zacatecas** (ID: 32)

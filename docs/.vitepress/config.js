@@ -27,16 +27,22 @@ export default defineConfig({
         text: 'Introducción',
         items: [
           { text: '¿Qué es Mexpost?', link: '/what-is-mexpost' },
-          { text: 'Primeros pasos', link: '/getting-started' }
+          { text: 'Primeros pasos 🚀', link: '/getting-started' }
         ]
       },
       {
         text: 'Busquedas',
         items: [
-          { text: 'Códigos Postales', link: '/codigos-postales' },
+          { text: 'Códigos Postales 📮', link: '/codigos-postales' },
           { text: 'Colonias', link: '/colonias' },
           { text: 'Municipio', link: '/municipios' },
           { text: 'Por coordenadas', link: '/coordenadas' }
+        ]
+      },
+      {
+        text: 'Otros',
+        items: [
+          { text: "ID's de los Estados", link: '/estados' },
         ]
       }
     ],
