@@ -19,7 +19,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Busquedas', link: '/codigos-postales' }
     ],
 
     sidebar: [
@@ -27,16 +27,22 @@ export default defineConfig({
         text: 'Introducción',
         items: [
           { text: '¿Qué es Mexpost?', link: '/what-is-mexpost' },
-          { text: 'Primeros pasos', link: '/getting-started' }
+          { text: 'Primeros pasos 🚀', link: '/getting-started' }
         ]
       },
       {
         text: 'Busquedas',
         items: [
-          { text: 'Códigos Postales', link: '/codigos-postales' },
-          { text: 'Colonias', link: '/colonias' },
-          { text: 'Municipio', link: '/municipios' },
-          { text: 'Por coordenadas', link: '/coordenadas' }
+          { text: 'Códigos Postales 📮', link: '/codigos-postales' },
+          { text: 'Colonias 🏘️', link: '/colonias' },
+          { text: 'Municipios 🏛️', link: '/municipios' },
+          { text: 'Por coordenadas (🚧 Dev)', link: '/coordenadas' }
+        ]
+      },
+      {
+        text: 'Otros',
+        items: [
+          { text: "ID's de los Estados", link: '/estados' },
         ]
       }
     ],
@@ -44,5 +50,8 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/open-mexico/mexpost' }
     ]
+  },
+  sitemap: {
+    hostname: 'https://open-mexico.github.io/mexpost/'
   }
 })
